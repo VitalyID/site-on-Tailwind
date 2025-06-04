@@ -634,6 +634,50 @@ video {
   display: none;
 }
 
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
+  }
+}
+
 .collapse {
   visibility: collapse;
 }
@@ -646,12 +690,12 @@ video {
   position: relative;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
 .block {
   display: block;
+}
+
+.flex {
+  display: flex;
 }
 
 .table {
@@ -662,39 +706,117 @@ video {
   display: none;
 }
 
+.h-\[14px\] {
+  height: 14px;
+}
+
+.h-\[26px\] {
+  height: 26px;
+}
+
+.w-\[14px\] {
+  width: 14px;
+}
+
+.w-\[31px\] {
+  width: 31px;
+}
+
+.w-\[1140px\] {
+  width: 1140px;
+}
+
 .border-collapse {
   border-collapse: collapse;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-\[10px\] {
+  gap: 10px;
+}
+
+.gap-\[15px\] {
+  gap: 15px;
+}
+
+.gap-\[26px\] {
+  gap: 26px;
+}
+
+.gap-\[35px\] {
+  gap: 35px;
+}
+
+.gap-\[9px\] {
+  gap: 9px;
 }
 
 .border {
   border-width: 1px;
 }
 
+.pb-\[15px\] {
+  padding-bottom: 15px;
+}
+
+.pt-\[33px\] {
+  padding-top: 33px;
+}
+
+.pb-\[20px\] {
+  padding-bottom: 20px;
+}
+
+.pb-\[25px\] {
+  padding-bottom: 25px;
+}
+
+.pb-\[33px\] {
+  padding-bottom: 33px;
+}
+
+.pb-\[5px\] {
+  padding-bottom: 5px;
+}
+
+.pb-\[10px\] {
+  padding-bottom: 10px;
+}
+
+.text-right {
+  text-align: right;
+}
+
 .font-futura {
   font-family: "Futura PT", sans-serif;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.font-bold {
-  font-weight: 700;
+.text-\[14px\] {
+  font-size: 14px;
 }
 
 .italic {
   font-style: italic;
 }
 
-.text-blue-600 {
+.text-\[\#ff540e\] {
   --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
-}
-
-.text-gray-700 {
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity, 1));
+  color: rgb(255 84 14 / var(--tw-text-opacity, 1));
 }
 
 .underline {
