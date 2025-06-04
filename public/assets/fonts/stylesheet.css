@@ -1,0 +1,55 @@
+@font-face {
+	font-family: 'Futura PT';
+	src: url('FuturaPT-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('FuturaPT-Heavy.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('FuturaPT-LightObl.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('FuturaPT-HeavyObl.woff2') format('woff2');
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('FuturaPT-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('FuturaPT-MediumObl.woff2') format('woff2');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('FuturaPT-BoldObl.woff2') format('woff2');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('FuturaPT-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}

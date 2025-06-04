@@ -1,0 +1,59 @@
+@font-face {
+	font-family: 'Futura PT';
+	src: url('../../public/assets/fonts/FuturaPT-Bold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('../public/assets/fonts/FuturaPT-Heavy.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('../../public/assets/fonts/FuturaPT-LightObl.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('../../public/assets/fonts/FuturaPT-HeavyObl.woff2') format('woff2');
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('../../public/assets/fonts/FuturaPT-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('../../public/assets/fonts/FuturaPT-MediumObl.woff2') format('woff2');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('../../public/assets/fonts/FuturaPT-BoldObl.woff2') format('woff2');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Futura PT';
+	src: url('../../public/assets/fonts/FuturaPT-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
