@@ -54,6 +54,39 @@
 	font-style: normal;
 }
 
+.menuHover {
+	cursor: pointer;
+}
+
+.header__menu--option:hover {
+	color: #ff540e;
+	transition: color 0.3s;
+}
+
+.textWhite {
+	color: #fff;
+}
+
+.textColor {
+	color: #ff540e;
+	/* font-size:;
+	font-family:  */
+}
+
+/* @keyframes blinking {
+	0% {
+		color: #eb906c;
+	}
+	50% {
+		color: #ff540e;
+	}
+	100% {
+		color: #eb906c;
+	}
+} */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Доставим малогабаритный и крупногабаритный груз от 50 кг по Киеву и Украине по цене ниже рыночной на 7-9% */

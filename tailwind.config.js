@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	mode: 'jit',
-	content: ['./public/**/*.html'],
+	content: ['./public/**/*.html', './src/**/*.js'],
 	theme: {
 		container: {
 			center: true,
@@ -18,6 +18,15 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				futura: ['"Futura PT"', 'sans-serif'],
+			},
+			keyframes: {
+				blinking: {
+					'0%, 100%': { opacity: 0.5 },
+					'50%': { opacity: 1 },
+				},
+			},
+			animation: {
+				blinking: 'blinking 4s infinite',
 			},
 		},
 	},

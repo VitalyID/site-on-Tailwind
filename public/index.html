@@ -15,6 +15,14 @@
 			xmlns:xlink="http://www.w3.org/1999/xlink"
 		>
 			<defs>
+				<symbol id="icon-close" viewBox="0 0 23 24">
+					<path
+						d="M19.4111 1.77588C19.9254 1.37104 20.6732 1.41408 21.1377 1.89502L21.2246 1.99463C21.6274 2.50662 21.5861 3.24855 21.1113 3.71338L21.1123 3.71436L13.3213 11.5054L21.1182 19.3022L21.2031 19.3999C21.573 19.8677 21.573 20.5317 21.2031 20.9995L21.1182 21.0962C20.6227 21.6092 19.805 21.6238 19.292 21.1284L11.4951 13.3315L3.7041 21.1226C3.23152 21.595 2.48365 21.6246 1.97656 21.2114L1.87793 21.1226C1.37381 20.6184 1.37385 19.8006 1.87793 19.2964L9.66895 11.5054L1.87207 3.7085C1.38882 3.20815 1.38895 2.41497 1.87207 1.91455L1.96875 1.82373C2.43539 1.42954 3.11867 1.41751 3.59863 1.79541L3.69824 1.88232L11.4951 9.6792L19.2861 1.88818V1.88916C19.2947 1.88042 19.3028 1.87125 19.3115 1.86279L19.4111 1.77588Z"
+						fill="#FF540E"
+						stroke="#FF540E"
+					/>
+				</symbol>
+
 				<symbol id="icon-phone" viewBox="0 0 32 32">
 					<path
 						fill="#ff540e"
@@ -114,13 +122,15 @@
 		</svg>
 
 		<div class="container">
-			<header class="flex justify-center items-center">
-				<div class="header__center w-[1140px] pb-[10px] pt-[33px]">
+			<header
+				class="flex justify-center items-center pb-[33px] pt-[33px] relative"
+			>
+				<div class="header__center w-[1140px]">
 					<div class="header__top flex justify-between items-center">
 						<div
 							class="header__menuLogo flex gap-[35px] justify-center items-center"
 						>
-							<svg class="icon w-[31px] h-[26px] cursor-pointer">
+							<svg class="icon js-menuIcon w-[31px] h-[26px] cursor-pointer">
 								<use xlink:href="#icon-menu"></use>
 							</svg>
 
@@ -177,20 +187,57 @@
 						</div>
 					</div>
 				</div>
-			</header>
-			<body>
-				<div class="body__title">
-					<picture>
-						<source srcset="./assets/images/GroupTop.jpg" type="image/jpg" />
-						<source srcset="./assets/images/GroupTop.webp" type="image/webp" />
-						<img
-							src="./assets/images/GroupTop.png"
-							alt="Грузоперевозки на Украине"
-						/>
-					</picture>
+
+				<div
+					class="header__menuDesktop js-menu flex justify-around items-center h-0 w-full transition-height duration-1000 bg-opacity-[98%] overflow-hidden bg-white absolute top-[100%] left-0 z-10"
+				>
+					<span class="header__menu--option">Категории</span
+					><span class="header__menu--option">Блог</span
+					><span class="header__menu--option">Тарифы</span
+					><span class="header__menu--option">О компании</span
+					><span class="header__menu--option">Контакты</span
+					><span class="header__menu--option">Вакансии</span>
 				</div>
-			</body>
-			<footer></footer>
+			</header>
+
+			<main class="relative">
+				<!-- pseudo element - it's cars -->
+				<div
+					class="main__title bg-[url('../assets/images/GroupTop.jpg')] min-h-[800px] before:content-[''] before:absolute before:top-[10%] before:right-[-3%] before:z-10 before:bg-[url('../assets/images/taxi.png')] before:w-[60%] before:h-[53%]"
+				>
+					<div
+						class="main__title--text absolute right-[48%] top-[13%] w-[617px]"
+					>
+						<h1 class="textWhite font-futura font text-[64px] leading-[85px]">
+							Грузоперевозки
+							<span class="textColor font-futura font-bold text-[72px]"
+								>в Киеве и Украине</span
+							>
+						</h1>
+						<p
+							class="textWhite text-[22px] w-[526px] font-medium leading-[25px]"
+						>
+							Доставим малогабаритный и крупногабаритный груз от 50 кг по Киеву
+							и Украине по цене ниже рыночной на 7-9%
+						</p>
+					</div>
+
+					<img
+						class="w-full h-[100%] top-0 left-0 absolute animate-blinking"
+						;
+						src="./assets/images/topOrange.png"
+						alt="Грузоперевозки на Украине"
+					/>
+
+					<p>А теперь тестим анимацию</p>
+				</div>
+				<!-- <img src="./assets/images/topOrange.png" alt="" /> -->
+			</main>
+			<footer>
+				<custom-Buttons></custom-Buttons>
+			</footer>
 		</div>
+		<script src="../src/js/main.js"></script>
+		<script type="module" src="../src/js/components/button.js"></script>
 	</body>
 </html>
