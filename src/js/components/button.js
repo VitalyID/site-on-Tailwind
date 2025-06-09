@@ -12,6 +12,11 @@ class Buttons extends HTMLElement {
 			'background',
 			'borderRadius',
 			'border',
+			'width',
+			'height',
+			'isactive',
+			'iconW',
+			'iconH',
 		];
 	}
 
@@ -25,12 +30,12 @@ class Buttons extends HTMLElement {
 		this.textSpan = document.createElement('span');
 		this.iconSvg = document.createElement('svg');
 		this.btn = document.createElement('div');
-		this.use = document.createElement('use');
+		// this.use = document.createElement('use');
 
 		// Creating elements in document
 		this.btn.append(this.iconSvg);
 		this.btn.append(this.textSpan);
-		this.iconSvg.append(this.use);
+		// this.iconSvg.append(this.use);
 
 		// link shadowTree with shadowRoot
 		shadowRoot.append(this.btn);
@@ -43,28 +48,81 @@ class Buttons extends HTMLElement {
 	}
 
 	attributeChangedCallback(attr, oldValue, newValue) {
-		console.log(`Аттрибут ${attr} изменился с ${oldValue} на ${newValue}`);
-		if (this.oldValue !== newValue) {
+		if (oldValue !== newValue) {
 			this.updateContent();
 		}
 	}
 
+	// connectedCallback() {
+
+	// }
+
 	updateContent() {
 		const text = this.getAttribute('text') || 'Button';
-		const gap = this.getAttribute('gap') || '10px';
+		const gap = this.getAttribute('gap') || '15px';
 		const idSprite = this.getAttribute('idSprite') || '';
-		const color = this.getAttribute('color') || 'red';
+		let color = this.getAttribute('color') || 'red';
 		const size = this.getAttribute('fontSize') || '16px';
 		const family = this.getAttribute('fontFamily') || 'sans-serif';
 		const padding = this.getAttribute('padding') || '10px 20px';
-		const bg = this.getAttribute('background') || 'gray';
+		let bg = this.getAttribute('background') || 'gray';
 		const brr = this.getAttribute('borderRadius') || '10px';
-		const br = this.getAttribute('border') || 'black solid 1px';
+		let br = this.getAttribute('border') || 'black solid 1px';
+		const width = this.getAttribute('width') || '40px';
+		const height = this.getAttribute('height') || '10px';
+		const active = this.getAttribute('isActive') === 'true';
+		const iconW = this.getAttribute('iconW') || '21px';
+		const iconH = this.getAttribute('iconH') || '21px';
 
 		if (!idSprite) {
 			this.iconSvg.style.display = 'none';
 		} else {
 			this.iconSvg.style.display = 'block';
+
+			(async () => {
+				try {
+					const response = await fetch('./assets/icons/sprite/symbol-defs.svg');
+					let textSprite = await response.text();
+
+					// Удаляем скрипт live-server из строки
+					const scriptRegex = /<script\b[^>]*>[\s\S]*?<\/script>/gi;
+					textSprite = textSprite.replace(scriptRegex, '');
+
+					const parser = new DOMParser();
+					const nodeSprite = parser.parseFromString(
+						textSprite,
+						'image/svg+xml'
+					);
+
+					const symbolElement = nodeSprite.querySelector(idSprite);
+
+					if (symbolElement) {
+						while (this.iconSvg.firstChild) {
+							this.iconSvg.removeChild(this.iconSvg.firstChild);
+						}
+
+						Array.from(symbolElement.children).forEach(child => {
+							this.iconSvg.appendChild(child.cloneNode(true));
+						});
+
+						const viewBox = symbolElement.getAttribute('viewBox');
+						if (viewBox) {
+							this.iconSvg.setAttribute('viewBox', viewBox);
+						}
+					} else {
+						console.warn(`Символ с ID ${idSprite} не найден в спрайте.`);
+						this.iconSvg.style.display = 'none';
+					}
+				} catch (error) {
+					console.log(error);
+				}
+			})();
+		}
+
+		if (!active) {
+			bg = '';
+			br = '#ff540e solid 1px';
+			color = '#A9A9A9';
 		}
 
 		this.textSpan.textContent = text;
@@ -79,23 +137,25 @@ class Buttons extends HTMLElement {
 			background: ${bg};
 			border: ${br};
 			border-radius: ${brr};
-			cursor: pointer}
+			cursor: pointer;
+			width: ${width};
+			height: ${height}
+			}
 			
 		span {
 			color: ${color};
 			font-size: ${size};
 			font-family:${family}
 		
-		};
+		}
+
+		svg {
+			width:${iconW};
+			height: ${iconH};
+			z-index:100}
 		`;
 
 		this.styleElement.textContent = newStyle;
-
-		this.use.setAttributeNS(
-			'http://www.w3.org/1999/xlink',
-			'xlink:href',
-			'#icon-' + idSprite
-		);
 	}
 }
 

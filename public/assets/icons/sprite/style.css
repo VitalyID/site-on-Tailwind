@@ -15,6 +15,10 @@ Single-colored icons can be modified like so:
 }
 ========================================== */
 
+.icon-close {
+  width: 0.9580078125em;
+}
+
 .icon-menu {
   width: 1.1923828125em;
 }
