@@ -22,25 +22,18 @@ openMenuIcon.addEventListener('click', () => {
 	}
 });
 
-// setActive attribute for customButton
-const serviceBtn = document.querySelectorAll('.main__central custom-Buttons');
+// toggle for button
+const serviceBtn = document.querySelectorAll('.main__central button');
 for (let btn of serviceBtn) {
 	btn.addEventListener('click', () => {
-		const currentAttribute = btn.getAttribute('isActive');
-		console.log(currentAttribute);
-
-		if (currentAttribute === 'false') {
-			const text = btn.getAttribute('text');
-			btn.setAttribute('isActive', 'true');
-
-			// set attribut "isActive" as false for active btn
-			serviceBtn.forEach(btn => {
-				if (btn.getAttribute('text') !== text) {
-					if (btn.getAttribute('isActive') === 'true') {
-						btn.setAttribute('isActive', 'false');
-					}
-				}
-			});
-		} else return;
+		serviceBtn.forEach(userBtn => {
+			if (userBtn === btn) {
+				btn.classList.remove('js-btnNoActive');
+				btn.classList.add('js-btnActive');
+			} else {
+				userBtn.classList.remove('js-btnActive');
+				userBtn.classList.add('js-btnNoActive');
+			}
+		});
 	});
 }

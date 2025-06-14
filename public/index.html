@@ -97,80 +97,129 @@
 			</header>
 
 			<main class="relative">
-				<!-- pseudo element - it's cars -->
 				<div
-					class="main__title bg-[url('../assets/images/GroupTop.jpg')] min-h-[800px] before:content-[''] before:absolute before:top-[10%] before:right-[-3%] before:z-10 before:bg-[url('../assets/images/taxi.png')] before:w-[60%] before:h-[53%]"
+					class="section__main flex justify-center items-start bg-[url('../assets/images/GroupTop.jpg')] w-[100%] bg-no-repeat"
 				>
-					<div
-						class="main__title--text absolute right-[48%] top-[13%] w-[617px]"
-					>
-						<h1 class="textWhite font-futura font text-[64px] leading-[85px]">
+					<div class="section__center w-[1140px]">
+						<h1
+							class="text-left textWhite font-futura font text-[64px] leading-[85px] w-[620px] pt-[12%] pb-[35px]"
+						>
 							Грузоперевозки
 							<span class="textColor font-futura font-bold text-[72px]"
 								>в Киеве и России</span
 							>
 						</h1>
 						<p
-							class="textWhite text-[22px] w-[526px] font-medium leading-[25px] mb-[38px]"
+							class="textWhite text-[22px] w-[526px] font-medium leading-[25px] mb-[35px]"
 						>
 							Доставим малогабаритный и крупногабаритный груз от 50 кг по Киеву
 							и Украине по цене ниже рыночной на 7-9%
 						</p>
+						<button
+							type="submit"
+							class="bg-[#ff540e] text-white pl-[30px] pr-[30px] pt-[15px] pb-[15px] mb-[11%] rounded-[10px] flex gap-[18px] justify-center items-center click"
+						>
+							<svg class="icon js-menuIcon w-[31px] h-[26px] cursor-pointer">
+								<use
+									xlink:href="./assets/icons/sprite/symbol-defs.svg#icon-calc"
+								></use>
+							</svg>
 
-						<custom-Buttons
-							width="262px"
-							color="black"
-							text="Рассчитать стоимость"
-							padding="23px 29px"
-							background="#ff540e"
-							isActive="true"
-							idSprite="#icon-calc"
-							iconW="50px"
-							iconH="50px"
-						></custom-Buttons>
+							Рассчитать стоимость
+						</button>
+
+						<div
+							class="main__central w-[100%] flex justify-center items-center gap-[30px]"
+						>
+							<button
+								type="submit"
+								class="js-btnActive text-white pl-[30px] pr-[30px] pt-[15px] pb-[15px] rounded-[10px] flex gap-[18px] justify-center items-center click w-[17%]"
+							>
+								Переезды
+							</button>
+
+							<button
+								type="submit"
+								class="js-btnNoActive text-white pl-[30px] pr-[30px] pt-[15px] pb-[15px] rounded-[10px] flex gap-[18px] justify-center items-center click w-[17%]"
+							>
+								Пепревозка
+							</button>
+
+							<button
+								type="submit"
+								class="js-btnNoActive text-white pl-[30px] pr-[30px] pt-[15px] pb-[15px] rounded-[10px] flex gap-[18px] justify-center items-center click w-[17%]"
+							>
+								Услуги
+							</button>
+						</div>
+
+						<!-- the btn 5t and 7t -->
+						<button
+							type="submit"
+							class="bg-[#ff540e] text-white pl-[15px] text-[14px] pr-[15px] pt-[9px] pb-[9px] rounded-[5px] flex gap-[18px] justify-center items-center click absolute top-[40%] left-[48.5%]"
+						>
+							До 7 Тонн
+						</button>
+
+						<button
+							type="submit"
+							class="bg-[#ff540e] text-white pl-[15px] text-[14px] pr-[15px] pt-[9px] pb-[9px] rounded-[5px] flex gap-[18px] justify-center items-center click absolute top-[43.5%] left-[86.6%]"
+						>
+							До 1 Тонны
+						</button>
+
+						<!-- section cards -->
+						<div
+							class="main__cards flex justify-center items-center gap-[30px] translate-y-10"
+						>
+							<div
+								class="card rounded-[10px] bg-white pt-[15px] pl-[20px] w-[354px] relative h-[180px] overflow-hidden"
+							>
+								<img
+									class="absolute top-0 right-0 translate-y-[-10%] w-[213px]"
+									src="./assets/images/apartment_move/apartment_move.png"
+									alt=""
+								/>
+								<span
+									class="inline-block text-[26px] leading-[29px] relative z-10 w-[125px]"
+									text-[#323232]
+								>
+									Квартирный переезд.</span
+								>
+							</div>
+							<div
+								class="card rounded-[10px] bg-white pt-[15px] pl-[20px] pr-[15px] w-[354px] h-[180px] overflow-hidden flex justify-center items-start"
+							>
+								<span
+									class="inline-block text-[26px] leading-[29px] relative z-10 w-[125px]"
+									text-[#323232]
+								>
+									Офисный переезд</span
+								>
+								<img
+									class="translate-y-[-3%]"
+									src="./assets/images/office_move.png"
+									alt=""
+								/>
+							</div>
+							<div
+								class="card rounded-[10px] bg-white pt-[15px] pl-[20px] pr-[15px] w-[354px] h-[180px] overflow-hidden flex justify-center items-start"
+							>
+								<span
+									class="inline-block text-[26px] leading-[29px] relative z-10 w-[125px]"
+									text-[#323232]
+								>
+									Дачный переезд</span
+								>
+								<img
+									class="w-[190px] h-[150px]"
+									src="./assets/images/summer_cottage_move.png"
+									alt=""
+								/>
+							</div>
+						</div>
 					</div>
-
-					<div
-						class="main__central flex justify-center items-center gap-[30px] absolute left-[50%] top-[75%] translate-x-[-50%]"
-					>
-						<custom-Buttons
-							width="176px"
-							color="black"
-							text="Рассчитать стоимость"
-							padding="23px 29px"
-							background="#FF540E"
-							isActive="true"
-						></custom-Buttons>
-						<custom-Buttons
-							width="176px"
-							color="black"
-							text="Перевозка"
-							padding="23px 29px"
-							background="#FF540E"
-							isActive="false"
-						></custom-Buttons>
-						<custom-Buttons
-							width="176px"
-							color="black"
-							text="Услуги"
-							padding="23px 29px"
-							background="#FF540E"
-							isActive="false"
-						></custom-Buttons>
-					</div>
-
-					<img
-						class="w-full h-[87%] top-0 left-0 absolute animate-blinking pointer-events-none"
-						;
-						src="./assets/images/topOrange.png"
-						alt="Грузоперевозки на Украине"
-					/>
-
-					<svg width="50" height="50">
-						<use href="./assets/icons/sprite/symbol-defs.svg#icon-calc"></use>
-					</svg>
 				</div>
-				<!-- <img src="./assets/images/topOrange.png" alt="" /> -->
 			</main>
 			<footer class="flex justify-center items-center"></footer>
 		</div>
