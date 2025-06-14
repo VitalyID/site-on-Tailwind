@@ -32,3 +32,5 @@ module.exports = {
 	},
 	plugins: [],
 };
+
+// before:block before:absolute before:w-[100%] before:h-[100%] before:top-0 before:left-0 before:bg-slate-500 before:z-[-10]
